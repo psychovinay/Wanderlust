@@ -1,0 +1,32 @@
+<%- include('../layouts/boilerplate') %>
+
+<div class="container mt-4">
+    <h1 class="mb-4">All Users</h1>
+    
+    <% if (users && users.length > 0) { %>
+        <div class="row">
+            <% users.forEach(user => { %>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <i class="fas fa-user"></i> <%= user.username %>
+                            </h5>
+                            <p class="card-text">
+                                <small class="text-muted"><%= user.email %></small><br>
+                                <small class="text-muted">Joined: <%= user.createdAt ? user.createdAt.toLocaleDateString() : 'N/A' %></small>
+                            </p>
+                            <% if (currUser && currUser._id.toString() === user._id.toString()) { %>
+                                <a href="/listings" class="btn btn-primary btn-sm">My Listings</a>
+                            <% } %>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    <% } else { %>
+        <div class="alert alert-info">
+            <i class="fas fa-info-circle"></i> No users found.
+        </div>
+    <% } %>
+</div>
