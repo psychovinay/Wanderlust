@@ -1,0 +1,1 @@
+Wanderlust is a full-stack web application designed to clone the core functionality of a vacation rental platform like Airbnb. Built using the Node.js, Express, and MongoDB stack, the application allows users to browse, create, and manage unique property listings, as well as share their experiences through user reviews and ratings.
